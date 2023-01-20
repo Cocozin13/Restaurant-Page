@@ -1,0 +1,7 @@
+- Make the restaurant page with tabs to change between the contact and menu:
+
+    - Each tab should be in his own module that exports a function that creates 
+    a div element adds the respetive content and style to that element and appends to DOM
+
+    - The tab switching logic should be inside index.js. It should have event listeners
+    for each tab to clean the current content and display the new tab content.  

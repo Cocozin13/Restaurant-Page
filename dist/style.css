@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header, nav {
+    position: relative;
+    bottom: 35%;
+}
+
+header {
+    padding-bottom: 50px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: green; 
+}
+
+.navDiv {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navDiv * {
+    margin: 100px;
+    padding: 10px;
+}
+
+
+main {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    padding: 100px;
+    background-color: aqua;
+    text-align: center;
+}
+
+footer {
+    position: relative;
+    top: 40%;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: block;
+    background-color: orange
+}
