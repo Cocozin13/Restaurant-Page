@@ -17,18 +17,21 @@ const createNav = () => {
     const nav = document.createElement('nav')
 
     const homeBtn = document.createElement('button')
+    homeBtn.classList.add("navBtn")
     homeBtn.textContent = "Home"
     homeBtn.addEventListener("click", () => {
         loadHome()
     })
 
     const menuBtn = document.createElement('button')
+    menuBtn.classList.add("navBtn")
     menuBtn.textContent = "Menu"
     menuBtn.addEventListener("click", () => {
         loadMenu()
     })
 
     const contactBtn = document.createElement('button')
+    contactBtn.classList.add("navBtn")
     contactBtn.textContent = "Contact"
     contactBtn.addEventListener("click", () => {
         loadContact()
@@ -64,6 +67,8 @@ const loadWebsite = () => {
     website.appendChild(createHeader())
     website.appendChild(createMain())
     website.appendChild(createFooter())
+
+    loadHome()
 }
 
 export default loadWebsite;
