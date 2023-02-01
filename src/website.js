@@ -6,7 +6,8 @@ const createHeader = () => {
     const header = document.createElement('header')
 
     const restaurantName = document.createElement('h1')
-    restaurantName.textContent = "SUSSY BAKA"
+    restaurantName.classList.add("restName")
+    restaurantName.textContent = "🍴   Felyne Canteen   🍴"
 
     header.appendChild(restaurantName)
     header.appendChild(createNav())
@@ -18,30 +19,49 @@ const createNav = () => {
 
     const homeBtn = document.createElement('button')
     homeBtn.classList.add("navBtn")
+    homeBtn.classList.add("active")
     homeBtn.textContent = "Home"
-    homeBtn.addEventListener("click", () => {
+    homeBtn.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
         loadHome()
+        activeButton(homeBtn)
     })
 
     const menuBtn = document.createElement('button')
     menuBtn.classList.add("navBtn")
     menuBtn.textContent = "Menu"
-    menuBtn.addEventListener("click", () => {
+    menuBtn.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
         loadMenu()
+        activeButton(menuBtn)
     })
 
     const contactBtn = document.createElement('button')
     contactBtn.classList.add("navBtn")
     contactBtn.textContent = "Contact"
-    contactBtn.addEventListener("click", () => {
+    contactBtn.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
         loadContact()
+        activeButton(contactBtn)
     })
 
     nav.appendChild(homeBtn)
     nav.appendChild(menuBtn)
     nav.appendChild(contactBtn)
-
+    
     return nav
+}
+
+const activeButton = (btn) => {
+    const buttons = document.querySelectorAll('.navBtn')
+
+    buttons.forEach((button) => {
+        if (button !== this) {
+            button.classList.remove('active')
+        }
+    })
+
+    btn.classList.add('active')
 }
 
 const createMain = () => {
@@ -63,7 +83,7 @@ const createFooter = () => {
 
 const loadWebsite = () => {
     const website = document.querySelector("#content")
-
+    
     website.appendChild(createHeader())
     website.appendChild(createMain())
     website.appendChild(createFooter())

@@ -1,68 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+    --headerBg: rgba(175, 171, 95, 0.7);
+    --footerBg: rgba(146, 182, 213, 0.7);
+    --btnBg: rgba(255, 255, 255, 1);
+    --btnColor: rgba(146, 182, 213, 1);
+    --btnBgH: rgba(146, 182, 213, 1);
+    --btnColorH: rgba(255, 255, 255, 1);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 html,body {
     width: 100%;
     height: 100%;
+    background: url('./images/others/background.webp');
+    background-attachment: fixed;
+    background-size: contain;
 }
 
+/*Content*/
+
 #content {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
 
-header, nav {
-    position: relative;
-    bottom: 35%;
-}
+/*Header + Nav*/
 
 header {
-    padding-bottom: 50px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    text-align: center;
-    background-color: green; 
+    padding: 0.5rem;
+    background-color: var(--headerBg); 
 }
 
-.navDiv {
-    width: 100%;
-    height: 10px;
+nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
-.navDiv * {
-    margin: 100px;
-    padding: 10px;
+.navBtn {
+    background-color: var(--btnBg);
+    color: var(--btnColor);
+    margin: 1.2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    cursor: pointer;
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    border-radius: 24px;
+    border: 2px solid var(--btnBg);
+    transition: background-color .2s ease-in;   
 }
 
+.navBtn:hover {
+    background-color: var(--btnBgH);
+    color: var(--btnColorH);
+}
+
+.navBtn.active {
+    background-color: var(--btnBgH);
+    color: var(--btnColorH); 
+}
+
+/*Main*/
 
 main {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    padding: 100px;
-    background-color: aqua;
-    text-align: center;
+    width: 100%;  
 }
 
+/*Home*/
+
+.home {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fade 1s;
+}
+
+.imgDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.chefImg {
+    width: 25%;
+    height: 15rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    clip-path: circle();
+    transition: transform .3s ease-in;
+    cursor: pointer;
+}
+
+.chefImg:hover {
+    transform: scale(1.2) rotate(-20deg);
+}
+
+.chefImg:hover:nth-child(2) {
+    transform: scale(1.2) rotate(20deg);
+}
+
+.imgDiv::before {
+    content: "Meowscular Chef";
+    font-weight: bolder;
+    padding-left: 2.5rem;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.imgDiv::after {
+    content: "Grammeowster Chef";
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.homeText {
+    padding: 2.5rem;
+}
+
+/*Menu*/
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    padding: 1.5rem;
+    animation: fade 1s;
+}
+
+.dish {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 2rem;
+    cursor: pointer;
+    transition: background-color .2s ease-in;
+}
+
+.dish:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.dishName {
+    padding-bottom: 1.5rem;
+}
+
+.dishDesc {
+    font-style: italic;
+}
+
+.dishDesc, .dishIngre {
+    padding-top: 1rem;
+}
+
+.dishImage {
+    width: 60%;
+    height: 15rem;
+    object-fit: cover;
+    object-position: 50% 50%;  
+}
+
+/*Contact*/
+
+.contact {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fade 1s;
+}
+.phone, .address {
+    padding-bottom: 2.5rem;
+}
+
+.map {
+    border: 3px solid black;
+    width: 1000px;
+    height: 500px;
+}
+
+/*Footer*/
+
 footer {
-    position: relative;
-    top: 40%;
     width: 100%;
-    padding: 10px;
-    padding-bottom: 50px;
-    text-align: center;
-    display: block;
-    background-color: orange
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footerBg);
+    padding: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+::-webkit-scrollbar-track {
+    background-color: rgba(146, 182, 213, .8);
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgba(175, 171, 95, 0.7)
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(175, 171, 95, 0.9)
+}
+
+/* Animation */
+
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+
+/*Media queries*/
+
+@media (max-width: 600px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .navBtn {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .map {
+        max-width: 450px;
+    }
 }

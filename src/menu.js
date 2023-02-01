@@ -4,26 +4,26 @@ const createMenu = () => {
 
     menu.appendChild(createMenuDish(
         "Gourmet Fish",
-        "amonguus",
-        "fish, and other stuff"
+        "\'Fresh fish, straight out the sea!!!\'",
+        "Fish, Potatoes, Cheese, Beer, Soup, Meat"
     ))
 
     menu.appendChild(createMenuDish(
         "Meat Fest",
-        "sussy",
-        "Meat, and other stuff"
+        "\'Gotta fuel the muscles with some protein!!!\'",
+        "Meats, Chicken, Cheese, Shrimp, Sausage, Potatoes, Beer, Ham, Soup"
     ))
 
     menu.appendChild(createMenuDish(
         "Chef's Choice Platter",
-        "amonguus",
-        "chefs choice dish, and other stuff"
+        "\'If you wanna make some gains, look no further!!!\'",
+        "Paelha, Meats, Shrimp, Cheese, Beer, Soup, Pineapple"
     ))
 
     menu.appendChild(createMenuDish(
         "Heavenly Grandma's Stew",
-        "amonguus",
-        "grandma stew, and other stuff"
+        "\'The best meal to prepare you for fighting some monsties!!!\'",
+        "Stew, Beer, Bread, Cheese, Sausage, Soup, Shepard's Pie"
     ))
 
     return menu
@@ -38,11 +38,11 @@ const createMenuDish = (name, description, ingredients) => {
     dishName.textContent = name
 
     const dishDescription = document.createElement("h3")
-    dishDescription.classList.add("dishDescription")
+    dishDescription.classList.add("dishDesc")
     dishDescription.textContent = description
 
     const dishIngredients = document.createElement("p")
-    dishIngredients.classList.add("dishIngredients")
+    dishIngredients.classList.add("dishIngre")
     dishIngredients.textContent = ingredients
 
     const dishImage = document.createElement("img")

@@ -4,11 +4,11 @@ const createContact = () => {
 
     const phone = document.createElement("h2")
     phone.classList.add("phone")
-    phone.textContent = "123-456-789"
+    phone.textContent = "📞:  123-456-789"
     
     const address = document.createElement("h2")
     address.classList.add("address")
-    address.textContent = "Astera | | Seliana"
+    address.textContent = "💠:  Astera | | Seliana"
     
     const map = document.createElement("iframe")
     map.classList.add("map")
